@@ -5,7 +5,6 @@ A comprehensive, compact MIME type module.
    >`一个全面的，压缩的MIME 类型模块.`
 
 ## Version 2 Notes
-```
 
     `版本 2 说明 `
 
@@ -13,12 +12,13 @@ Version 2 is a breaking change from 1.x, as the semver implies.  Specifically:
 
    >`版本2是源自版本1.x的重大改变，正如语义化版本控制规范里蕴含的.特别是以下几点:`
 
+
 * **ES6 support required (node@>=6)**
 * `lookup()` renamed to `getType()`
 * `extension()` renamed to `getExtension()`
 * `charset()` and `load()` methods have been removed
 
-   
+  
    >-`需要ES6支持（node @> = 6）`
    >-`lookup() 改名为 getType()`
    >-`extension() 改名为 getExtension()`
@@ -27,16 +27,17 @@ Version 2 is a breaking change from 1.x, as the semver implies.  Specifically:
 
 If you prefer the legacy version of this module please `npm install mime@^1`.  Version 1 docs may be found [here](https://github.com/broofa/node-mime/tree/v1.x).
 
-   >`如果你喜欢这个模块的旧版本，请npm install mime@^1.版本1文档可以在[这里](https://github.com/broofa/node-mime/tree/v1.x)  找到.`
+  
+  >`如果你喜欢这个模块的旧版本，请npm install mime@^1.版本1文档可以在[这里](https://github.com/broofa/node-mime/tree/v1.x)  找到.`
 
 
 ## Install - NPM
 ```
-    `安装 - NPM`
+ 
+  `安装 - NPM`
     
 npm install mime
 ```
-
 ## Quick Start
 
 For the full version (800+ MIME types, 1,000+ extensions):
