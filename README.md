@@ -32,7 +32,7 @@ If you prefer the legacy version of this module please `npm install mime@^1`.  V
 ## Install - NPM
 ```
  
-`安装 - NPM`
+安装 - NPM
     
 npm install mime
 ```
@@ -60,7 +60,8 @@ There is also a "lite" version of this module that omits vendor-specific
 (`*/vnd.*`) and experimental (`*/x-*`) types.  It weighs in at ~2.5KB, compared
 to 8KB for the full version.  To load the lite version:
 
-   >`这个模块还有一个“精简”版本，省略了vendor-specific（*/vnd.*）和experimental（*/x-*）类型.它的重量约为2.5KB，而完整版则为8KB。加载精简版本：`
+
+   >`这个模块还有一个“精简”版本，省略了vendor-specific（*/vnd.*）和experimental（*/x-*）类型.它的重量约为2.5KB，而完整版则为8KB。加载精简版本：`
 
 ```javascript
 const mime = require('mime/lite');
@@ -105,6 +106,7 @@ dataset of mime type definitions pulled from IANA, Apache, NGINX, and custom map
 submitted by the Node.js community.
 
    >`mime-db是MIME类型信息的“真相之源”.这不是一个API.相反,它是从IANA，Apache,NGINX和由Node.js社区提交的自定义映射中抽取的MIME类型定义的规范化数据集.`
+   
 
 [`mime-types`](https://github.com/jshttp/mime-types) is a thin
 wrapper around mime-db that provides an API drop-in compatible(ish) with `mime @ < v1.3.6` API.
@@ -168,13 +170,15 @@ myMime.getExtension('text/def');  // ⇨ 'leppard'
 
 If more than one map argument is provided, each map is `define()`ed (see below), in order.
 
-   >`如果提供了多个映射参数，则每个映射按顺序被定义（见下文）`
+   >`如果提供了多个映射参数，则每个映射按顺序被定义（见下文）`
+   
 
 ### mime.getType(pathOrExtension)
 
 Get mime type for the given path or extension.  E.g.
 
    >`获取给定路径或扩展的MIME类型.例如`
+   
 
 ```javascript
 mime.getType('js');             // ⇨ 'application/javascript'
@@ -215,11 +219,13 @@ mime.getExtension('text/html; charset=utf8');  // ⇨ 'html'
 
 Define [more] type mappings.
 
-   >`定义更多类型映射`
+   >`定义更多类型映射`
+   
 
 `typeMap` is a map of type -> extensions, as documented in `new Mime`, above.
 
-   >`typeMap是类型 - >扩展的映射,正如上文所说的new Mime.`
+   >`typeMap是类型 - >扩展的映射,正如上文所说的new Mime.`
+   
 
 By default this method will throw an error if you try to map a type to an
 extension that is already assigned to another type.  Passing `true` for the
