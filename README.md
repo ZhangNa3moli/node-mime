@@ -25,8 +25,8 @@ Version 2 is a breaking change from 1.x, as the semver implies.  Specifically:
 
 If you prefer the legacy version of this module please `npm install mime@^1`.  Version 1 docs may be found [here](https://github.com/broofa/node-mime/tree/v1.x).
 
-  
-  >`如果你喜欢这个模块的旧版本，请npm install mime@^1.版本1文档可以在这里找到.`
+   
+   >`如果你喜欢这个模块的旧版本，请npm install mime@^1.版本1文档可以在这里找到.`
 
 
 ## Install - NPM
@@ -105,7 +105,8 @@ truth" for MIME type information.  It is not an API.  Rather, it is a canonical
 dataset of mime type definitions pulled from IANA, Apache, NGINX, and custom mappings
 submitted by the Node.js community.
 
-   >`mime-db是MIME类型信息的“真相之源”.这不是一个API.相反,它是从IANA，Apache,NGINX和由Node.js社区提交的自定义映射中抽取的MIME类型定义的规范化数据集.`
+
+   >`mime-db是MIME类型信息的“真相之源”.这不是一个API.相反,它是从IANA，Apache,NGINX和由Node.js社区提交的自定义映射中抽取的MIME类型定义的规范化数据集.`
    
 
 [`mime-types`](https://github.com/jshttp/mime-types) is a thin
@@ -177,7 +178,8 @@ If more than one map argument is provided, each map is `define()`ed (see below),
 
 Get mime type for the given path or extension.  E.g.
 
-   >`获取给定路径或扩展的MIME类型.例如`
+   
+   >`获取给定路径或扩展的MIME类型.例如`
    
 
 ```javascript
