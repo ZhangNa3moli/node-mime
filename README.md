@@ -4,9 +4,7 @@ A comprehensive, compact MIME type module.
 
    >`一个全面的，压缩的MIME 类型模块.`
 
-## Version 2 Notes
-
-    `版本 2 说明 `
+## Version 2 Notes 版本 2 说明 
 
 Version 2 is a breaking change from 1.x, as the semver implies.  Specifically:
 
@@ -28,7 +26,7 @@ Version 2 is a breaking change from 1.x, as the semver implies.  Specifically:
 If you prefer the legacy version of this module please `npm install mime@^1`.  Version 1 docs may be found [here](https://github.com/broofa/node-mime/tree/v1.x).
 
   
-  >`如果你喜欢这个模块的旧版本，请npm install mime@^1.版本1文档可以在[这里](https://github.com/broofa/node-mime/tree/v1.x)  找到.`
+  >`如果你喜欢这个模块的旧版本，请npm install mime@^1.版本1文档可以在这里找到.`
 
 
 ## Install - NPM
@@ -54,7 +52,7 @@ mime.getExtension('text/plain');        // ⇨ 'txt'
 
 See [Mime API](#mime-api) below for API details.
 
-   >`有关API详细信息，请参阅下面的[Mime API](#mime-api)`
+   >`有关API详细信息，请参阅下面的Mime API`
 
 ## Lite Version精简版
 
@@ -75,7 +73,7 @@ To use this module in the browser, you would typlically use
 package your code.  However, browser-ready versions are available via wzrd.in.
 E.g. For the full version:
 
-   >`在浏览器中使用mime模块，你一般会使用[webpack](https://webpack.github.io/)或[browserify](http://browserify.org/)来包装你的代码。但是，浏览器就绪版本可以通过wzrd.in获得.
+   >`在浏览器中使用mime模块，你一般会使用webpack或browserify来包装你的代码。但是，浏览器就绪版本可以通过wzrd.in获得.
 例如对于完整版本：`
 
     <script src="https://wzrd.in/standalone/mime@latest"></script>
@@ -85,7 +83,8 @@ E.g. For the full version:
 
 Or, for the `mime/lite` version:
 
-   >`或者，对于精简版本：`
+   >`或者，对于精简版本：`
+   
 
     <script src="https://wzrd.in/standalone/mime%2flite@latest"></script>
     <script>
@@ -97,19 +96,20 @@ Or, for the `mime/lite` version:
 For those of you wondering about the difference between these [popular] NPM modules,
 here's a brief rundown ...
 
-   >`对于那些想知道这些[popular]NPM模块之间的区别的人，这里是一个简短的概要...`
+   >`对于那些想知道这些流行的NPM模块之间的区别的人，这里是一个简短的概要...`
+   
 
 [`mime-db`](https://github.com/jshttp/mime-db) is "the source of
 truth" for MIME type information.  It is not an API.  Rather, it is a canonical
 dataset of mime type definitions pulled from IANA, Apache, NGINX, and custom mappings
 submitted by the Node.js community.
 
-   >`[`mime-db`](https://github.com/jshttp/mime-db)是MIME类型信息的“真相之源”.这不是一个API.相反,它是从IANA，Apache,NGINX和由Node.js社区提交的自定义映射中抽取的MIME类型定义的规范化数据集.`
+   >`mime-db是MIME类型信息的“真相之源”.这不是一个API.相反,它是从IANA，Apache,NGINX和由Node.js社区提交的自定义映射中抽取的MIME类型定义的规范化数据集.`
 
 [`mime-types`](https://github.com/jshttp/mime-types) is a thin
 wrapper around mime-db that provides an API drop-in compatible(ish) with `mime @ < v1.3.6` API.
 
-   >`[`mime-types`](https://github.com/jshttp/mime-types)是mime-db的一个简单的包装器,它提供了一个与mime @ < v1.3.6API  兼容（ish）的API.`
+   >`mime-types是mime-db的一个简单的包装器,它提供了一个与mime @ < v1.3.6API  兼容（ish）的API.`
 
 `mime` is, as of v2, a self-contained module bundled with a pre-optimized version
 of the `mime-db` dataset.  It provides a simplified API with the following characteristics:
@@ -121,10 +121,10 @@ of the `mime-db` dataset.  It provides a simplified API with the following chara
 * Method naming consistent with industry best-practices
 * Compact footprint.  E.g. The minified+compressed sizes of the various modules:
 
-- 内部一致类型⇔扩展映射.即 `mime.getType(mime.getExtension(type)) == type`总是为真
-- 方法命名符合行业最佳实践
-- 设计紧凑
-- 例如各种模块的缩小+压缩尺寸：
+- `内部一致类型⇔扩展映射.即 mime.getType(mime.getExtension(type)) == type总是为真`
+- `方法命名符合行业最佳实践`
+- `设计紧凑`
+- `例如各种模块的缩小+压缩尺寸：`
 
 Module | Size
 --- | ---
@@ -247,4 +247,4 @@ mime.getExtension('text/x-abc')  // ⇨ 'abc'
 ----
 Markdown generated from [src/README_js.md](src/README_js.md) by [![RunMD Logo](http://i.imgur.com/h0FVyzU.png)](https://github.com/broofa/runmd)
 
-   >`markdown由[src/README_js.md](src/README_js.md)生成[![RunMD Logo](http://i.imgur.com/h0FVyzU.png)](https://github.com/broofa/runmd)徽标`
+   >`markdown由src / README_js.md生成RunMD徽标`
