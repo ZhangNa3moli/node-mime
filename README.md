@@ -178,7 +178,8 @@ If more than one map argument is provided, each map is `define()`ed (see below),
 
 Get mime type for the given path or extension.  E.g.
 
-   >`获取给定路径或扩展的MIME类型.例如`
+   
+   >`获取给定路径或扩展的MIME类型.例如`
    
 
 ```javascript
