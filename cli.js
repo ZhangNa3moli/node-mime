@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 //Node安装可能会在 /usr/local/bin/ 而不是 /usr/bin/ 就需要 env 命令在前边
+
 'use strict';
 //严格模式下
 
