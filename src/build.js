@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 'use strict';
+//严格模式下
 
 const fs = require('fs');
 const path = require('path');
@@ -8,12 +9,15 @@ const mimeScore = require('mime-score');
 
 let db = require('mime-db');
 let chalk = require('chalk');
+//引入以上模块
 
 const STANDARD_FACET_SCORE = 900;
 
 const byExtension = {};
+//定义byExtension对象
 
 // Clear out any conflict extensions in mime-db
+//去掉在mime-db中冲突的扩展
 for (let type in db) {
   let entry = db[type];
   entry.type = type;
