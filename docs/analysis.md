@@ -8,6 +8,9 @@
 
 #### 地址：[https://zhangna3moli.github.io/node-mime](https://zhangna3moli.github.io/node-mime)
 
+>- MIME：Multipurpose Internet Mail Extensions，多用途互联网邮件扩展类型
+>- mime模块是一个基于mime-db的MIME类型解析及处理程序。
+
 #### 仓库包含文件及作用
 
 > index.js 和 lite.js
@@ -59,10 +62,6 @@ runmd: 可运行的README文件,在markdown中运行代码块并用输出注释�
       使用runmd,,您的读者可以相信您的代码块是可运行的，代码输出将被声明。
 
 mocha：自动化测试工具
-
-> .travis.yml 
-
-travis-ci持续集成工具的配置文件
 
 > test文件夹
 
