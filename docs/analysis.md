@@ -4,12 +4,15 @@
 
 #### 名称：node-mime
 
-#### 功能：使用第三方mime模块设置某种扩展名的文件的响应程序类型,既方便又统一
+#### 功能：使用第三方mime模块设置某种扩展名的文件的响应程序类型,当指定扩展名文件被访问时，浏览器会自动使用指定应用程序来打开.
 
 #### 地址：[https://zhangna3moli.github.io/node-mime](https://zhangna3moli.github.io/node-mime)
 
 >- MIME：Multipurpose Internet Mail Extensions，多用途互联网邮件扩展类型
 >- mime模块是一个基于mime-db的MIME类型解析及处理程序。
+>- 当指定扩展名文件被访问时，浏览器会自动使用指定应用程序来打开。在HTTP中，是通过名为Content-Type的HTTP头来设置或响应对应的文件类型的。例如：当服务器要向客户端发送的内容图类为.jpg图片，就需要将Content-Type头设置为image/jpeg，而客户端同样会根据Content-Type对服务器内容进行解析。
+MIME和Content-Type是文件类型设置和解板的标准。当服务器要对某种扩展名文件发送到客户端时，会根据文件扩展名设置Content-Type头。而客户端（可以认为是浏览器），对服务器内容进行解析时也需要Content-Type所代表的MIME找到内容的解析程序。MIME类型非常多，当我们在服务端设置发送内容格式时或当我们对服务端内容进行解析时，对几百种MIME类型进行处理工作量会非常巨大。
+推荐一个NPM包：mime。mime模块使用Apache项目的mime.types文件,该文件包含了超过600个Content-Type类型数据，并且支持添加自定义的MIME类型。
 
 #### 仓库包含文件及作用
 
