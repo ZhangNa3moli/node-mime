@@ -32,7 +32,8 @@ class Mime {
    * @param map (Object) type definitions 
    */
   //定义mime类型->扩展的映射。每个键是一个映射到与类型相联系的扩展的数组。第一个扩展被用作类型的默认扩展名。
-  //例如：mime.define({'audio/ogg', ['oga', 'ogg', 'spx']});  'audio/ogg'是类型   ['oga', 'ogg', 'spx']是扩展名
+  //例如：mime.define({'audio/ogg', ['oga', 'ogg', 'spx']});  'audio/ogg'是类型 
+  //['oga', 'ogg', 'spx']是扩展名
   //定义类型映射  map:对象
   
   
@@ -54,7 +55,8 @@ class Mime {
         if (!force && (ext in this._types)) {
           throw new Error(`Attempt to change mapping for "${ext}" extension from "${this._types[ext]}" to "${type}". Pass \`force=true\` to allow this, otherwise remove "${ext}" from the list of extensions for "${type}".`);
         }
-        //默认情况下，如果尝试改变将类型映射到已分配给其他类型的扩展，则此方法将引发错误。传递true的force参数将抑制这种行为（可以覆盖任何以前的映射）。否则就从扩展列表中移除该已分配类型映射的扩展
+        //默认情况下，如果尝试改变将类型映射到已分配给其他类型的扩展，则此方法将引发错误。
+        //传递true的force参数将抑制这种行为（可以覆盖任何以前的映射）。否则就从扩展列表中移除该已分配类型映射的扩展
         this._types[ext] = type;
       }
      
@@ -70,11 +72,12 @@ class Mime {
   /**
    * Lookup a mime type based on extension查找一个基于扩展的类型
    */
-  // mime.getType（path）获取给定路径的MIME类型。
+  // mime.getType（pathOrExtension）获取给定路径或扩展的MIME类型
   getType(path) {
     path = String(path);
     //将路径转化成字符串
-    //正则：^匹配输入字行首 .匹配任意单个字符 *匹配前面的子表达式任意次 []可选字符集合。匹配所包含的任意一个字符
+    //正则：^匹配输入字行首 .代表一个除了回车和换行符之外的所有字符,等效于[^\r\n] *匹配前面的子表达式出现0次或多次 []代表字符类。匹配所包含的任意一个字符
+    //调用字符串与正则相关的原型方法String.prototype.replace()来匹配
     var last = path.replace(/^.*[/\\]/, '').toLowerCase();
     var ext = last.replace(/^.*\./, '').toLowerCase();
 
@@ -90,8 +93,9 @@ class Mime {
   //返回mime类型对应的文件扩展名
   getExtension(type) {
     // \s 匹配任何不可见字符，包括空格、制表符、换页符等等。等价于[ \f\n\r\t\v]
-    // () 将( ) 之间的表达式定义为“组”（group），并且将匹配这个表达式的字符保存到一个临时区域（一个正则表达式中最多可以保存9个），它们可以用 \1 到\9 的符号来引用。
-    //  $  匹配输入行尾。
+    // () 将( )之间的表达式定义为“组”（group），并且将匹配这个表达式的字符保存到一个临时区域（一个正则表达式中最多可以保存9个），它们可以用 \1 到\9 的符号来引用。
+    // 正则表达式RegExp原型方法(test) 检测/^\s*([^;\s]*)/中是否含有type所包含的内容
+    // $1 $2 ……表示正则表达式里面第一个、第二个、……括号里面的匹配内容。
     type = /^\s*([^;\s]*)/.test(type) && RegExp.$1;
     return type && this._extensions[type.toLowerCase()] || null;
   }
