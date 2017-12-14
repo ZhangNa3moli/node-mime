@@ -36,6 +36,7 @@ for (let type in db) {
       //.source - 定义了MIME类型。如果未设置，则可能是自定义媒体类型
       e0.pri = mimeScore(e0.type, e0.source);
       e1.pri = mimeScore(e1.type, e1.source);
+      //mimescore:为了解决扩展冲突的目的，给MIME类型分配一个分数
 
       let drop = e0.pri < e1.pri ? e0 : e1;// 如果去除,e0.pri < e1.pri返回e0
       let keep = e0.pri >= e1.pri ? e0 : e1;//如果不去除，e0.pri >= e1.pri返回e0
