@@ -121,3 +121,13 @@ getExtension(type)|是|返回mime类型对应的文件扩展名
 writeTypesFile(types, path)|否|在指定路径创建文件内容
 
 
+执行过程
+
+![image](../images/exe.jpg)
+![image](../images/exe2.jpg)
+
+
+## 三、mocha测试
+
+![image](../images/mocha1.jpg)
+![image](../images/mocha2.jpg)
