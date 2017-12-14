@@ -43,6 +43,10 @@ class Mime {
   //     类型：[扩展]
   //     'text/def': ['leppard']
   //   };
+  // 创建并使用mime实例
+  //const myMime = new Mime(typeMap);
+  //myMime.getType('abc');            // ⇨ 'text/abc'
+  //myMime.getExtension('text/def');  // ⇨ 'leppard'  得到拓展名
   define(typeMap, force) {
   //mime.define(typeMap [,force = false])force
     for (let type in typeMap) {
