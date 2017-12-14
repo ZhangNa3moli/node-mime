@@ -4,7 +4,7 @@
 'use strict';
 //严格模式下
 
-var mime = require('.');//引入同级目录下的所有文件模块
+var mime = require('.');//引入同级目录下的所有暴露的模块
 var file = process.argv[2];//获取命令行参数:获得文件的文件名/路径
 var type = mime.getType(file);//获取给定路径或扩展的MIME类型
 
