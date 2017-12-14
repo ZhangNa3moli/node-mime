@@ -77,7 +77,7 @@ Object.keys(db).sort().forEach(k => {
 });
 //调用writeTypesFile（）函数：创建文件
 //path模块的join方法：路径联合 将多个参数组合成一个 path 
-//标准类型的文件    _dirname:全局路径变量  放在上一级目录下的types文件夹下
+//标准类型的文件    _dirname:全局路径变量 当前脚本所在路径：放在上一级目录下的types文件夹下
 writeTypesFile(standard, path.join(__dirname, '../types', 'standard.json'));
 //非标准类型的文件   放在上一级目录下的types文件夹下
 writeTypesFile(other, path.join(__dirname, '../types', 'other.json'));
