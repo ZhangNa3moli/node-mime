@@ -67,7 +67,7 @@ class Mime {
   //myMime.getType('abc');            // ⇨ 'text/abc'
   //myMime.getExtension('text/def');  // ⇨ 'leppard'  得到拓展名
   define(typeMap, force) {
-  //mime.define(typeMap [,force = false])force
+  //mime.define(typeMap [,force = false])
     for (let type in typeMap) {
     //遍历typeMap对象中的type类型
       var extensions = typeMap[type];
@@ -82,6 +82,16 @@ class Mime {
         //传递true的force参数将抑制这种行为（可以覆盖任何以前的映射）。否则就从扩展列表中移除该已分配类型映射的扩展
         this._types[ext] = type;
       }
+      
+   //const mime = new Mime({'text/a': ['a']}, {'text/b': ['b']});
+  /*assert.throws(function() {
+            mime.define({'text/c': ['b']});
+        });
+        //断言函数不会抛出错误
+        assert.doesNotThrow(function() {
+            mime.define({'text/c': ['b']}, true);
+        });
+  */
      
 
       // Use first extension as default
@@ -108,6 +118,7 @@ class Mime {
     var hasDot = ext.length < last.length - 1;
 
     return (hasDot || !hasPath) && this._types[ext] || null;
+    //有匹配的的路径或扩展名返回对应的类型，未检测到或识别到匹配的路径或扩展名的情况下返回null
   }
 
   /**
@@ -121,6 +132,7 @@ class Mime {
     // $1 $2 ……表示正则表达式里面第一个、第二个、……括号里面的匹配内容。
     type = /^\s*([^;\s]*)/.test(type) && RegExp.$1;
     return type && this._extensions[type.toLowerCase()] || null;
+    //有匹配的的类型返回对应的扩展名，未检测到或识别到匹配的类型的情况下返回null
   }
 }
 
