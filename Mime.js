@@ -9,10 +9,12 @@
 //ES6中引入Class（类）作为对象的模板,会默认添加constructor方法
 class Mime {
   constructor() {
+    //创建一个原型为null的空对象
     this._types = Object.create(null);
+    //Object.create()是内部定义一个对象，并且让XX.prototype对象赋值为引进的空对象。
     //null用来表示尚未存在的对象,null的数据类型是Object对象
     this._extensions = Object.create(null);
-    
+   
     //在函数代码中，使用特殊对象 arguments，开发者无需明确指出参数名，就能访问它们
     //用 arguments对象检测函数的参数个数，引用属性 arguments.length
     for (var i = 0; i < arguments.length; i++) {
@@ -21,6 +23,23 @@ class Mime {
       this.define(arguments[i]);
     }
   }
+  
+   /*例：const mime = new Mime(     
+          {'text/a': ['a', 'a1']},
+          {'text/b': ['b', 'b1']}
+        );
+        assert.deepEqual(mime._types, {       
+          a: 'text/a',
+          a1: 'text/a',
+          b: 'text/b',
+          b1: 'text/b',
+        });
+        //extensions：扩展,测试类型与扩展是否相等
+        assert.deepEqual(mime._extensions, {
+          'text/a': 'a',
+          'text/b': 'b',
+        });
+      */
 
   /**
    * Define mimetype -> xtension mappings.  Each key is a mime-type that maps
