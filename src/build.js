@@ -19,7 +19,8 @@ const byExtension = {};
 //定义byExtension对象
 
 // Clear out any conflict extensions in mime-db
-//mime-db是从IANA，Apache，NGINX和由Node.js社区提交的自定义映射中抽取的MIME类型定义的规范化数据集。
+//mime-db是从IANA，Apache，NGINX和由Node.js社区提交的自定义映射中抽取的MIME类型定义的规范化数据集,
+//是媒体类型数据库.它是所有MIME类型的数据库。它由一个单一的公共JSON文件组成.
 //函数作用：去掉在mime-db中冲突的扩展
 for (let type in db) {
   //遍历db对象中的type
@@ -31,7 +32,7 @@ for (let type in db) {
   entry.extensions.forEach(ext => {
     //遍历扩展数组中的元素
     if (ext in byExtension) {
-      const e0 = entry;//db中的类型
+      const e0 = entry;//db中的扩展
       const e1 = byExtension[ext];//byExtension对象中的某个扩展
       //.source - 定义了MIME类型。如果未设置，则可能是自定义媒体类型
       e0.pri = mimeScore(e0.type, e0.source);
