@@ -31,7 +31,7 @@ CLI(Command Line  Interface for batch scripting)命令行界面批处理脚本
 
 > build.js
 
-
+去掉在mime-db中的扩展冲突，建立mime类型->扩展映射的标准与非标准文件
 
 > README.md 
 
